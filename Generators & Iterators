@@ -1,0 +1,35 @@
+Generators in Python
+In Python, a generator is a special type of iterator that can be used to generate a sequence of values. Unlike normal functions that return a single value using the return statement, generators use the yield statement to produce a series of values, one at a time.
+
+Generators are useful for generating large sequences of values without storing them all in memory at once, which can be memory-efficient. They are also used for lazy evaluation, where values are generated only when needed.
+
+In this example:
+
+The my_generator function is defined with three yield statements. Each yield statement produces a value when the generator is iterated over.
+A generator object gen is created by calling the my_generator function. This does not execute the function; instead, it returns a generator object.
+The next() function is used to retrieve values from the generator one at a time. Each call to next() executes the generator function until the next yield statement is encountered, at which point it pauses and returns the value.
+When there are no more values to yield, attempting to retrieve more values will raise a StopIteration exception, indicating that the generator has been exhausted.
+
+
+
+Iterators in Python
+In Python, an iterator is an object that allows iteration over a sequence of elements. It provides a way to access elements of a container one by one without needing to know the underlying structure of the container.
+
+Here's a simple example of iterators in Python:
+
+We have a list my_list containing integers.
+We create an iterator my_iter using the iter() function.
+We use the next() function to access each element of the list sequentially.
+Each time next() is called on the iterator, it returns the next element of the sequence. If there are no more elements, it raises a StopIteration exception.
+# Define a list
+my_list = [1, 2, 3, 4, 5]
+
+# Get an iterator for the list
+my_iter = iter(my_list)
+
+# Print each element of the list using the iterator
+print(next(my_iter))  # Output: 1
+print(next(my_iter))  # Output: 2
+print(next(my_iter))  # Output: 3
+print(next(my_iter))  # Output: 4
+print(next(my_iter))  # Output: 5
